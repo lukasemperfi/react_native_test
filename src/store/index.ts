@@ -9,7 +9,8 @@ import {
 	PERSIST,
 	PURGE,
 	REGISTER,
-} from 'redux-persist'
+} from 'redux-persist';
+
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import cardsReducer from './cardsSlice';
@@ -42,7 +43,6 @@ const store = configureStore({
 
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof rootReducer>
-
 
 export const persistor = persistStore(store);
 export default store;

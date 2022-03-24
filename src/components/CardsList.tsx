@@ -5,7 +5,7 @@ import { Card } from './Card';
 
 import { ICard } from '../models/ICard';
 
-interface CardsListProps{ 
+interface CardsListProps {
 	cards: ICard[];
 	isLoading: boolean;
 	isRefreshing: boolean;
@@ -13,7 +13,7 @@ interface CardsListProps{
 	loadMore: () => void;
 }
 
-export const CardsList: FC<CardsListProps> = ({cards, isLoading, isRefreshing, onRefresh, loadMore}) => {
+export const CardsList: FC<CardsListProps> = ({ cards, isLoading, isRefreshing, onRefresh, loadMore }) => {
 
 	const renderItem = ({ item }: { item: any }): JSX.Element => (
 		<Card url={item.download_url} author={item.author} />
@@ -21,7 +21,7 @@ export const CardsList: FC<CardsListProps> = ({cards, isLoading, isRefreshing, o
 
 	const renderLoader = (): JSX.Element => (
 		<View>
-			<ActivityIndicator size='large' color='#fff' animating={isLoading}/>
+			<ActivityIndicator size='large' color='#fff' animating={isLoading} />
 		</View>
 	);
 

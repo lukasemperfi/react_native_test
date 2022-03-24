@@ -13,6 +13,7 @@ interface Input {
 }
 
 export const Input: FC<Input> = (props) => {
+
 	return (
 		<View style={styles.wrapper}>
 			<TextInput

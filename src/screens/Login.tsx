@@ -15,7 +15,6 @@ import { EMAIL_REGEX } from '../constans';
 
 import { useAppDispatch } from '../hooks/redux-hooks';
 
-
 export const Login: FC = () => {
 	const dispatch = useAppDispatch();
 	const {
@@ -24,19 +23,16 @@ export const Login: FC = () => {
 		formState: { errors }
 	} = useForm({ mode: 'all' });
 
-
 	const handleLogin = (data: any): void => {
-		
 		const user = {
 			isLoggedIn: true,
 			email: data.email,
 			id: randomInteger(1, 12),
 		};
+
 		dispatch(setSignIn(user));
 	}
 
-
-	
 	return (
 		<View style={[styles.container, globalStyles.darkBackground]}>
 			<Controller

@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
 interface CardProps {
@@ -6,7 +6,7 @@ interface CardProps {
 	author: string;
 }
 
-export const Card:FC<CardProps> = ({ url, author }) => {
+export const Card: FC<CardProps> = ({ url, author }) => {
 
 	return (
 		<View style={styles.card}>

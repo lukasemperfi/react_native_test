@@ -11,8 +11,7 @@ import { fetchCards, loadMoreCards, pageIncrement, selectCards } from '../store/
 import { useDidMount } from '../hooks/useDidMount';
 
 export const Feeds: FC = () => {
-	const { error } = useAppSelector(selectCards);
-	const { cards, isLoading, page, isRefreshing } = useAppSelector(selectCards);
+	const { cards, isLoading, page, isRefreshing, error } = useAppSelector(selectCards);
 	const isMounted = useDidMount();
 	const dispatch = useAppDispatch();
 
@@ -29,6 +28,7 @@ export const Feeds: FC = () => {
 	const onRefresh = () => {
 		dispatch(fetchCards(1))
 	}
+
 	const loadMore = () => {
 		dispatch(pageIncrement())
 	}
@@ -45,7 +45,7 @@ export const Feeds: FC = () => {
 			/>
 		</View>
 	)
-}
+};
 
 const styles = StyleSheet.create({
 	container: {

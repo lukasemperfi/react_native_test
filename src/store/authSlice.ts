@@ -1,5 +1,5 @@
 import { RootState } from './index';
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 interface userAuthState {
 	isLoggedIn: boolean;
@@ -33,7 +33,7 @@ const authSlice = createSlice({
 
 export const { setSignIn, setSignOut } = authSlice.actions;
 
-export const selectIsLoggedIn = (state: RootState) => state.userAuth.isLoggedIn;
+export const selectIsLoggedIn = (state: RootState) => state?.userAuth?.isLoggedIn;
 
 export const selectUserAuth = (state: RootState) => state?.userAuth;
 

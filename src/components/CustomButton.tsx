@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 interface CustomButtonProps {

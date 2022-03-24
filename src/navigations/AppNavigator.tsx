@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
 import { Profile } from '../screens/Profile';
 import { Feeds } from '../screens/Feeds';
 
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const Tab = createMaterialTopTabNavigator();
 
-export const AppNavigator:FC = () => {
+export const AppNavigator: FC = () => {
 
 	return (
 		<Tab.Navigator screenOptions={{
@@ -30,4 +30,4 @@ export const AppNavigator:FC = () => {
 				component={Profile} />
 		</Tab.Navigator>
 	)
-}
+};

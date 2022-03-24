@@ -1,21 +1,21 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react';
 
-import { StyleSheet, Text, View } from 'react-native'
-import { UserInfo } from '../components/UserInfo'
-import { CustomButton } from '../components/CustomButton'
+import { StyleSheet, Text, View } from 'react-native';
+import { UserInfo } from '../components/UserInfo';
+import { CustomButton } from '../components/CustomButton';
 
-import globalStyles from '../../style'
+import globalStyles from '../../style';
 
-import { selectUserAuth, setSignOut } from '../store/authSlice'
-import { fetchUserById, selectUserInfo } from '../store/userSlice'
-import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks'
+import { selectUserAuth, setSignOut } from '../store/authSlice';
+import { fetchUserById, selectUserInfo } from '../store/userSlice';
 
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 
 export const Profile: FC = () => {
 	const { first_name = '', avatar } = useAppSelector(selectUserInfo);
 	const { id, email } = useAppSelector(selectUserAuth);
 	const dispatch = useAppDispatch();
-	
+
 	useEffect(() => {
 		dispatch(fetchUserById(id))
 	}, [dispatch])

@@ -18,7 +18,6 @@ const initialState: CardsState = {
 	page: 1
 }
 
-
 export const fetchCards = createAsyncThunk<void, number, { rejectValue?: unknown, dispatch?: AppDispatch }>(
 	'cards/fetchCards',
 	async function (currPage, { rejectWithValue, dispatch }) {
@@ -65,7 +64,6 @@ export const loadMoreCards = createAsyncThunk<void, number, { rejectValue?: unkn
 	}
 );
 
-
 const cardsSlice = createSlice({
 	name: 'cards',
 	initialState,
@@ -80,9 +78,6 @@ const cardsSlice = createSlice({
 		pageIncrement(state) {
 			state.page += 1;
 		},
-		resetPage(state) {
-			state.page = 1;
-		}
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchCards.pending, (state) => {
@@ -113,7 +108,7 @@ const cardsSlice = createSlice({
 	},
 });
 
-export const { loadMore, refreshCards, pageIncrement, resetPage } = cardsSlice.actions;
+export const { loadMore, refreshCards, pageIncrement } = cardsSlice.actions;
 
 export const selectCards = (state: RootState) => state.cards;
 
